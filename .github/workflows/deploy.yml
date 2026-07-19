@@ -33,17 +33,28 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Verify production index uses built assets
+      - name: Verify production build
         run: |
           test -f dist/index.html
           grep -q '/anish-shalini-wedding-2026/assets/' dist/index.html
           ! grep -q '/src/main.jsx' dist/index.html
           test -f dist/.nojekyll
 
-      # Publish the Vite dist folder to the gh-pages branch.
-      # GitHub's "Deploy from a branch" was publishing the raw main source
-      # (index.html → /src/main.jsx), which causes a blank page.
-      - name: Deploy dist to gh-pages
+      # GitHub Pages is configured as "Deploy from a branch" on main/(root).
+      # That publishes the raw repo (blank page via /src/main.jsx).
+      # Sync the Vite dist into main so branch deploy serves the real build,
+      # while keeping source files (src/, index.vite.html, etc.).
+      - name: Publish dist onto main for Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: main
+          clean: false
+          force: false
+          commit-message: 'Deploy production build for GitHub Pages [skip ci]'
+
+      # Also keep a clean gh-pages branch of dist only (optional/alternate source).
+      - name: Publish dist to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -51,39 +62,25 @@ jobs:
           force_orphan: true
           enable_jekyll: false
 
-      # Point Pages at gh-pages so visitors get the built site, not main source.
-      - name: Set Pages source to gh-pages branch
+      - name: Prefer Pages source gh-pages when permitted
         uses: actions/github-script@v7
         continue-on-error: true
         with:
           script: |
             const { owner, repo } = context.repo
-            const body = {
-              build_type: 'legacy',
-              source: { branch: 'gh-pages', path: '/' },
-            }
             try {
               await github.request('PUT /repos/{owner}/{repo}/pages', {
                 owner,
                 repo,
-                ...body,
+                build_type: 'legacy',
+                source: { branch: 'gh-pages', path: '/' },
                 headers: { 'X-GitHub-Api-Version': '2022-11-28' },
               })
-              console.log('Updated Pages source to gh-pages /')
+              console.log('Pages source set to gh-pages')
             } catch (error) {
-              if (error.status === 404) {
-                await github.request('POST /repos/{owner}/{repo}/pages', {
-                  owner,
-                  repo,
-                  ...body,
-                  headers: { 'X-GitHub-Api-Version': '2022-11-28' },
-                })
-                console.log('Created Pages site on gh-pages /')
-              } else {
-                console.warn(
-                  'Could not auto-update Pages settings (' +
-                    error.status +
-                    '). In Settings → Pages, set Branch to gh-pages / (root).',
-                )
-              }
+              console.log(
+                'Pages settings unchanged (' +
+                  error.status +
+                  '). main root now contains the production build.',
+              )
             }
