@@ -40,7 +40,7 @@
   font-weight: 500;
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--text-gold-strong);
   margin-bottom: var(--space-4);
 }
 
@@ -61,9 +61,11 @@
 
 .closing__venue {
   margin-top: var(--space-2);
-  font-size: var(--text-sm);
-  letter-spacing: 0.08em;
-  color: var(--text-secondary);
+  font-size: var(--text-base);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.035em;
+  color: var(--color-ink-soft);
 }
 
 .closing__shloka {
@@ -71,7 +73,8 @@
 }
 
 .closing__shloka .shloka__sanskrit {
-  font-size: clamp(1.05rem, 0.96rem + 0.4vw, 1.25rem);
+  font-size: clamp(1.125rem, 1.04rem + 0.4vw, 1.3rem);
+  font-weight: 500;
   line-height: 1.9;
   color: var(--color-burgundy);
 }
@@ -79,9 +82,9 @@
 .closing__shloka .shloka__meaning {
   max-width: 31rem;
   margin-inline: auto;
-  font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.05rem);
-  line-height: 1.65;
-  color: var(--text-muted);
+  font-size: clamp(1.125rem, 1.06rem + 0.18vw, 1.18rem);
+  line-height: 1.7;
+  color: var(--color-ink-soft);
 }
 
 .closing__shloka .shloka__source {
@@ -119,9 +122,9 @@
   align-items: center;
   gap: var(--space-4);
   font-family: var(--font-display);
-  font-size: var(--text-base);
+  font-size: var(--text-md);
   font-style: italic;
-  color: var(--text-muted);
+  color: var(--color-ink-soft);
 }
 
 .closing__footer-line {

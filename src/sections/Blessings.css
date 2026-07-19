@@ -34,7 +34,7 @@
   font-weight: 500;
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--text-gold-strong);
 }
 
 .blessings__title {
@@ -48,9 +48,9 @@
 .blessings__intro {
   margin-top: 0.85rem;
   font-family: var(--font-display);
-  font-size: clamp(1.05rem, 0.96rem + 0.38vw, 1.25rem);
+  font-size: clamp(1.125rem, 1.04rem + 0.35vw, 1.3rem);
   font-weight: 400;
-  line-height: 1.55;
+  line-height: 1.65;
   color: var(--text-secondary);
 }
 
@@ -249,11 +249,11 @@
 }
 
 .family-panel__side {
-  font-size: clamp(0.76rem, 0.72rem + 0.16vw, 0.86rem);
+  font-size: clamp(0.875rem, 0.82rem + 0.16vw, 0.95rem);
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--text-gold-strong);
 }
 
 .family-panel__person {
@@ -294,9 +294,9 @@
 
 .family-panel__relationship {
   font-family: var(--font-display);
-  font-size: clamp(1rem, 0.94rem + 0.25vw, 1.12rem);
+  font-size: clamp(1.125rem, 1.05rem + 0.25vw, 1.22rem);
   font-style: italic;
-  line-height: 1.45;
+  line-height: 1.55;
   color: var(--text-secondary);
 }
 
@@ -313,7 +313,7 @@
   justify-content: center;
   gap: 0.38rem;
   font-family: var(--font-display);
-  font-size: clamp(1.18rem, 1.08rem + 0.38vw, 1.38rem);
+  font-size: clamp(1.25rem, 1.14rem + 0.38vw, 1.45rem);
   font-weight: 600;
   line-height: 1.4;
   color: var(--color-burgundy-deep);
@@ -322,8 +322,8 @@
 .family-panel__late {
   flex: 0 0 auto;
   font-family: var(--font-body);
-  font-size: 0.68em;
-  font-weight: 500;
+  font-size: 0.72em;
+  font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--color-burgundy);
 }
@@ -368,10 +368,10 @@
 .blessings__meaning {
   margin-top: 1rem;
   font-family: var(--font-display);
-  font-size: clamp(1rem, 0.94rem + 0.25vw, 1.12rem);
+  font-size: clamp(1.125rem, 1.05rem + 0.25vw, 1.22rem);
   font-style: italic;
-  line-height: 1.55;
-  color: var(--text-secondary);
+  line-height: 1.65;
+  color: var(--color-ink-soft);
 }
 
 @keyframes family-panel-suspend {
@@ -410,7 +410,7 @@
 
 @media (max-width: 767px) {
   .blessings__mantra {
-    font-size: clamp(1rem, 5vw, 1.28rem);
+    font-size: clamp(1.0625rem, 4.8vw, 1.28rem);
   }
 }
 
@@ -418,6 +418,10 @@
   .blessings__intro br,
   .blessings__meaning br {
     display: none;
+  }
+
+  .blessings__mantra span {
+    white-space: normal;
   }
 
   .family-panel {

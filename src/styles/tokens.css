@@ -19,7 +19,7 @@
   --color-morning: #e8e0d4;
   --color-ink: #2c2420;
   --color-ink-soft: #5a5048;
-  --color-ink-muted: #8a7e72;
+  --color-ink-muted: #6f645b;
   --color-line: rgba(92, 26, 36, 0.14);
   --color-line-gold: rgba(168, 137, 74, 0.35);
 
@@ -31,6 +31,7 @@
   --text-secondary: var(--color-ink-soft);
   --text-muted: var(--color-ink-muted);
   --text-accent: var(--color-burgundy);
+  --text-gold-strong: #80642f;
   --text-on-dark: var(--color-ivory);
 
   /* Typography */
@@ -38,10 +39,10 @@
   --font-body: 'Outfit', system-ui, sans-serif;
   --font-sanskrit: 'Noto Sans Devanagari', 'Noto Serif Devanagari', serif;
 
-  --text-xs: clamp(0.7rem, 0.65rem + 0.2vw, 0.8rem);
-  --text-sm: clamp(0.8125rem, 0.75rem + 0.3vw, 0.9375rem);
-  --text-base: clamp(0.9375rem, 0.875rem + 0.35vw, 1.0625rem);
-  --text-md: clamp(1.0625rem, 1rem + 0.4vw, 1.25rem);
+  --text-xs: clamp(0.8125rem, 0.77rem + 0.18vw, 0.9rem);
+  --text-sm: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);
+  --text-base: clamp(1.125rem, 1.08rem + 0.18vw, 1.1875rem);
+  --text-md: clamp(1.1875rem, 1.1rem + 0.32vw, 1.3rem);
   --text-lg: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
   --text-xl: clamp(1.625rem, 1.3rem + 1.4vw, 2.5rem);
   --text-2xl: clamp(2rem, 1.5rem + 2.2vw, 3.5rem);
@@ -52,8 +53,8 @@
   --leading-snug: 1.35;
   --leading-normal: 1.6;
   --leading-relaxed: 1.75;
-  --tracking-wide: 0.12em;
-  --tracking-wider: 0.22em;
+  --tracking-wide: 0.1em;
+  --tracking-wider: 0.16em;
   --tracking-display: 0.02em;
 
   /* Spacing */

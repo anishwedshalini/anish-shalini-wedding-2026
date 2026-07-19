@@ -50,7 +50,7 @@
   font-weight: 600;
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--text-gold-strong);
 }
 
 .gallery__title {
@@ -65,8 +65,8 @@
 .gallery__lede {
   margin-top: 0.85rem;
   font-family: var(--font-display);
-  font-size: clamp(1.05rem, 0.96rem + 0.35vw, 1.25rem);
-  line-height: 1.55;
+  font-size: clamp(1.125rem, 1.04rem + 0.35vw, 1.3rem);
+  line-height: 1.65;
   color: var(--color-ink-soft);
 }
 
@@ -264,9 +264,10 @@
 .gallery-shot__caption {
   margin-top: 0.75rem;
   font-family: var(--font-display);
-  font-size: clamp(1rem, 0.94rem + 0.25vw, 1.15rem);
+  font-size: clamp(1.125rem, 1.05rem + 0.25vw, 1.22rem);
   font-style: italic;
-  letter-spacing: 0.04em;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
   color: var(--color-burgundy);
   text-align: center;
 }
@@ -308,7 +309,7 @@
 .gallery-lightbox__caption {
   margin-top: 0.85rem;
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: clamp(1.125rem, 1.06rem + 0.2vw, 1.25rem);
   font-style: italic;
   color: rgba(247, 242, 233, 0.86);
 }
@@ -320,9 +321,9 @@
   min-height: 2.5rem;
   padding: 0.45rem 0.9rem;
   font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(247, 242, 233, 0.9);
   border: 1px solid rgba(247, 242, 233, 0.28);
