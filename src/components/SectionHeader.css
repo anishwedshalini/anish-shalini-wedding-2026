@@ -1,0 +1,19 @@
+.section-header {
+  margin-bottom: var(--space-7);
+}
+
+.section-header--center {
+  text-align: center;
+}
+
+.section-header--center .section__lede {
+  margin-inline: auto;
+}
+
+.section-header--left {
+  text-align: left;
+}
+
+.section-header--left .section__lede {
+  margin-inline: 0;
+}

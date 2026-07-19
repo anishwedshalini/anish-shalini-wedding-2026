@@ -1,0 +1,12 @@
+# Dependencies
+node_modules
+dist
+.DS_Store
+*.local
+.env
+.env.*
+!.env.example
+
+# Local toolchain (optional Node binary for this machine)
+.tools/
+*.tar.gz

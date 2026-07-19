@@ -1,0 +1,14 @@
+.sacred-intro {
+  background: var(--bg-section);
+}
+
+.sacred-intro__border {
+  margin: 0 auto var(--space-2);
+  max-width: 16rem;
+  color: var(--color-gold);
+}
+
+.sacred-intro__border-svg {
+  width: 100%;
+  height: 12px;
+}

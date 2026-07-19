@@ -1,0 +1,210 @@
+.floating-controls {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right, 0px));
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  pointer-events: none;
+}
+
+.floating-control {
+  position: relative;
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border: 1px solid rgba(168, 137, 74, 0.74);
+  border-radius: 50%;
+  background: rgba(250, 247, 241, 0.96);
+  box-shadow:
+    0 0.5rem 1.3rem rgba(61, 16, 24, 0.15),
+    inset 0 0 0 2px rgba(255, 253, 249, 0.68);
+  color: var(--color-burgundy-deep);
+  pointer-events: auto;
+  transition:
+    opacity var(--duration-mid) var(--ease-soft),
+    transform var(--duration-mid) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-soft),
+    background var(--duration-fast) var(--ease-soft),
+    box-shadow var(--duration-fast) var(--ease-soft);
+}
+
+.floating-control--music {
+  opacity: 0.9;
+}
+
+.floating-control--music::before {
+  content: '';
+  position: absolute;
+  inset: -0.28rem;
+  border: 1px dashed rgba(168, 137, 74, 0.5);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.floating-control--music.is-playing {
+  opacity: 1;
+  border-color: rgba(168, 137, 74, 0.82);
+}
+
+.floating-control--top {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transform: translateY(0.55rem);
+}
+
+.floating-control--top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.floating-control__icon {
+  display: grid;
+  width: 1.12rem;
+  height: 1.12rem;
+  place-items: center;
+}
+
+.floating-control svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.55;
+}
+
+.floating-control:disabled {
+  cursor: default;
+  opacity: 0.38;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .floating-control:not(:disabled):hover {
+    border-color: rgba(168, 137, 74, 0.92);
+    background: var(--color-cream);
+    box-shadow:
+      0 0.65rem 1.45rem rgba(61, 16, 24, 0.2),
+      inset 0 0 0 2px rgba(255, 253, 249, 0.76);
+    transform: translateY(-2px) scale(1.04);
+  }
+}
+
+.petal-field {
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+}
+
+.petal {
+  position: absolute;
+  top: -1.5rem;
+  left: var(--petal-left);
+  width: var(--petal-size);
+  height: auto;
+  overflow: visible;
+  fill: currentColor;
+  opacity: 0;
+  animation: petal-fall var(--petal-duration) linear var(--petal-delay) infinite;
+  will-change: transform;
+}
+
+.petal--marigold {
+  color: rgba(212, 168, 75, 0.46);
+}
+
+.petal--rose {
+  color: rgba(184, 92, 82, 0.4);
+}
+
+[data-bloom] {
+  opacity: 0.18;
+  scale: 0.92;
+  rotate: -1.5deg;
+  transform-origin: center;
+  transition:
+    opacity 1000ms var(--ease-soft),
+    scale 1200ms var(--ease-out),
+    rotate 1200ms var(--ease-out);
+}
+
+[data-bloom].is-bloomed {
+  opacity: 1;
+  scale: 1;
+  rotate: 0deg;
+}
+
+@keyframes petal-fall {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -4vh, 0) rotate(0deg);
+  }
+  12% {
+    opacity: 0.38;
+  }
+  38% {
+    transform: translate3d(var(--petal-mid), 38vh, 0) rotate(80deg);
+  }
+  70% {
+    opacity: 0.32;
+    transform: translate3d(var(--petal-end), 72vh, 0) rotate(-55deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--petal-mid), 106vh, 0) rotate(var(--petal-rotation));
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-controls {
+    right: max(0.75rem, env(safe-area-inset-right, 0px));
+    bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .petal:nth-child(n + 5) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .petal-field {
+    display: none;
+  }
+
+  [data-bloom] {
+    opacity: 1;
+    scale: 1;
+    rotate: 0deg;
+  }
+
+  .floating-control--music::before {
+    display: none;
+  }
+
+  .floating-control--music.is-playing {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .floating-control--music.is-playing::before {
+    opacity: 0.7;
+    animation: music-ring-turn 12s linear infinite;
+  }
+}
+
+@keyframes music-ring-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}

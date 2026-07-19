@@ -1,0 +1,63 @@
+.lazy-image {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background: var(--color-parchment);
+}
+
+.lazy-image__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity var(--duration-slow) var(--ease-soft),
+    transform var(--duration-slow) var(--ease-out);
+}
+
+.lazy-image__img.is-loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.lazy-image__fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(168, 137, 74, 0.12), transparent 60%),
+    linear-gradient(160deg, var(--color-parchment), var(--color-ivory));
+}
+
+.lazy-image__motif {
+  width: 2rem;
+  height: 2rem;
+  margin-inline: auto;
+  border: 1px solid var(--color-line-gold);
+  border-radius: 50%;
+  position: relative;
+}
+
+.lazy-image__motif::before,
+.lazy-image__motif::after {
+  content: '';
+  position: absolute;
+  inset: 25%;
+  border: 1px solid rgba(168, 137, 74, 0.45);
+  border-radius: 50%;
+}
+
+.lazy-image__motif::after {
+  inset: 40%;
+}
+
+.lazy-image__label {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-style: italic;
+  color: var(--text-muted);
+}

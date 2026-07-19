@@ -1,0 +1,99 @@
+/* Design tokens — Anish Weds Shalini */
+:root {
+  /* Palette */
+  --color-ivory: #f7f2e9;
+  --color-parchment: #efe6d6;
+  --color-cream: #faf7f1;
+  --color-burgundy: #5c1a24;
+  --color-burgundy-deep: #3d1018;
+  --color-sindoor: #9c3a3a;
+  --color-sindoor-soft: #b85c52;
+  --color-gold: #a8894a;
+  --color-gold-soft: #c4a86a;
+  --color-earth: #8a6f55;
+  --color-earth-soft: #c4b09a;
+  --color-haldi: #d4a84b;
+  --color-haldi-glow: #f0d78c;
+  --color-agni: #8b3a2a;
+  --color-evening: #2a1f2e;
+  --color-morning: #e8e0d4;
+  --color-ink: #2c2420;
+  --color-ink-soft: #5a5048;
+  --color-ink-muted: #8a7e72;
+  --color-line: rgba(92, 26, 36, 0.14);
+  --color-line-gold: rgba(168, 137, 74, 0.35);
+
+  /* Surfaces */
+  --bg-page: var(--color-ivory);
+  --bg-section: var(--color-cream);
+  --bg-elevated: #fffdf9;
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-ink-soft);
+  --text-muted: var(--color-ink-muted);
+  --text-accent: var(--color-burgundy);
+  --text-on-dark: var(--color-ivory);
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+  --font-sanskrit: 'Noto Sans Devanagari', 'Noto Serif Devanagari', serif;
+
+  --text-xs: clamp(0.7rem, 0.65rem + 0.2vw, 0.8rem);
+  --text-sm: clamp(0.8125rem, 0.75rem + 0.3vw, 0.9375rem);
+  --text-base: clamp(0.9375rem, 0.875rem + 0.35vw, 1.0625rem);
+  --text-md: clamp(1.0625rem, 1rem + 0.4vw, 1.25rem);
+  --text-lg: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+  --text-xl: clamp(1.625rem, 1.3rem + 1.4vw, 2.5rem);
+  --text-2xl: clamp(2rem, 1.5rem + 2.2vw, 3.5rem);
+  --text-3xl: clamp(2.5rem, 1.8rem + 3vw, 4.5rem);
+  --text-hero: clamp(2.75rem, 2rem + 3.5vw, 5.25rem);
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+  --tracking-wide: 0.12em;
+  --tracking-wider: 0.22em;
+  --tracking-display: 0.02em;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
+  --space-section: clamp(4.5rem, 8vw, 9rem);
+  --space-section-sm: clamp(3rem, 5vw, 5rem);
+
+  /* Layout */
+  --max-width: 72rem;
+  --max-narrow: 40rem;
+  --max-prose: 36rem;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --nav-height: 3.75rem;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 200ms;
+  --duration-mid: 450ms;
+  --duration-slow: 800ms;
+
+  /* Borders & radii */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --border-subtle: 1px solid var(--color-line);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-mid: 0ms;
+    --duration-slow: 0ms;
+  }
+}
