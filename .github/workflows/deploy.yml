@@ -36,14 +36,17 @@ jobs:
       - name: Verify production build
         run: |
           test -f dist/index.html
-          grep -q '/anish-shalini-wedding-2026/assets/' dist/index.html
+          grep -q 'src="/assets/' dist/index.html
+          grep -q 'href="/assets/' dist/index.html
+          ! grep -q '/anish-shalini-wedding-2026/' dist/index.html
           ! grep -q '/src/main.jsx' dist/index.html
           test -f dist/.nojekyll
+          test -f dist/CNAME
 
-      # GitHub Pages is configured as "Deploy from a branch" on main/(root).
-      # That publishes the raw repo (blank page via /src/main.jsx).
-      # Sync the Vite dist into main so branch deploy serves the real build,
-      # while keeping source files (src/, index.vite.html, etc.).
+      # GitHub Pages is configured as "Deploy from a branch" on main/(root),
+      # served from the custom domain anishwedshalini.in at "/".
+      # Sync the Vite dist into main root so the branch deploy serves the real
+      # build, while keeping source files (src/, index.vite.html, etc.).
       - name: Publish dist onto main for Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
@@ -52,35 +55,3 @@ jobs:
           clean: false
           force: false
           commit-message: 'Deploy production build for GitHub Pages [skip ci]'
-
-      # Also keep a clean gh-pages branch of dist only (optional/alternate source).
-      - name: Publish dist to gh-pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          force_orphan: true
-          enable_jekyll: false
-
-      - name: Prefer Pages source gh-pages when permitted
-        uses: actions/github-script@v7
-        continue-on-error: true
-        with:
-          script: |
-            const { owner, repo } = context.repo
-            try {
-              await github.request('PUT /repos/{owner}/{repo}/pages', {
-                owner,
-                repo,
-                build_type: 'legacy',
-                source: { branch: 'gh-pages', path: '/' },
-                headers: { 'X-GitHub-Api-Version': '2022-11-28' },
-              })
-              console.log('Pages source set to gh-pages')
-            } catch (error) {
-              console.log(
-                'Pages settings unchanged (' +
-                  error.status +
-                  '). main root now contains the production build.',
-              )
-            }

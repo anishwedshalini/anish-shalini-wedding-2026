@@ -4,7 +4,8 @@ import { resolve } from 'node:path'
 import { renameSync, existsSync } from 'node:fs'
 
 export default defineConfig({
-  base: '/anish-shalini-wedding-2026/',
+  // Served from the root of the custom domain (anishwedshalini.in).
+  base: '/',
   plugins: [
     react(),
     {
@@ -20,7 +21,7 @@ export default defineConfig({
   ],
   server: {
     port: 5173,
-    open: '/anish-shalini-wedding-2026/index.vite.html',
+    open: '/index.vite.html',
   },
   build: {
     rollupOptions: {
