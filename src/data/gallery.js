@@ -1,3 +1,5 @@
+import { assetUrl } from '../utils/assetUrl'
+
 /**
  * Engagement gallery — replace files in public/assets/gallery/
  * with the matching filenames when photographs are ready.
@@ -8,8 +10,8 @@
 export const galleryItems = [
   {
     id: 'engagement-01',
-    src: '/assets/gallery/optimized/engagement-01.jpg',
-    fullSrc: '/assets/gallery/engagement-01.jpg',
+    src: assetUrl('assets/gallery/optimized/engagement-01.jpg'),
+    fullSrc: assetUrl('assets/gallery/engagement-01.jpg'),
     alt: 'Anish and Shalini — engagement portrait',
     caption: 'The Beginning of Forever',
     role: 'featured',
@@ -20,8 +22,8 @@ export const galleryItems = [
   },
   {
     id: 'engagement-02',
-    src: '/assets/gallery/optimized/engagement-02.jpg',
-    fullSrc: '/assets/gallery/engagement-02.jpg',
+    src: assetUrl('assets/gallery/optimized/engagement-02.jpg'),
+    fullSrc: assetUrl('assets/gallery/engagement-02.jpg'),
     alt: 'Engagement ritual with ceremonial rice and kalash',
     role: 'detail-primary',
     frame: 'rect',
@@ -31,8 +33,8 @@ export const galleryItems = [
   },
   {
     id: 'engagement-03',
-    src: '/assets/gallery/optimized/engagement-03.jpg',
-    fullSrc: '/assets/gallery/engagement-03.jpg',
+    src: assetUrl('assets/gallery/optimized/engagement-03.jpg'),
+    fullSrc: assetUrl('assets/gallery/engagement-03.jpg'),
     alt: 'Anish and Shalini exchanging rings at their engagement',
     role: 'ceremony',
     frame: 'ornate',
@@ -42,8 +44,8 @@ export const galleryItems = [
   },
   {
     id: 'engagement-04',
-    src: '/assets/gallery/optimized/engagement-04.jpg',
-    fullSrc: '/assets/gallery/engagement-04.jpg',
+    src: assetUrl('assets/gallery/optimized/engagement-04.jpg'),
+    fullSrc: assetUrl('assets/gallery/engagement-04.jpg'),
     alt: 'Anish and Shalini holding hands with the engagement ring',
     role: 'detail-secondary',
     frame: 'rect',
@@ -53,8 +55,8 @@ export const galleryItems = [
   },
   {
     id: 'engagement-05',
-    src: '/assets/gallery/optimized/engagement-05.jpg',
-    fullSrc: '/assets/gallery/engagement-05.jpg',
+    src: assetUrl('assets/gallery/optimized/engagement-05.jpg'),
+    fullSrc: assetUrl('assets/gallery/engagement-05.jpg'),
     alt: 'Anish and Shalini with family at their engagement',
     role: 'group-side',
     frame: 'rect',
@@ -64,8 +66,8 @@ export const galleryItems = [
   },
   {
     id: 'engagement-06',
-    src: '/assets/gallery/optimized/engagement-06.jpg',
-    fullSrc: '/assets/gallery/engagement-06.jpg',
+    src: assetUrl('assets/gallery/optimized/engagement-06.jpg'),
+    fullSrc: assetUrl('assets/gallery/engagement-06.jpg'),
     alt: 'Large family group at Anish and Shalini’s engagement',
     role: 'group-wide',
     frame: 'rect',
@@ -75,8 +77,8 @@ export const galleryItems = [
   },
   {
     id: 'engagement-07',
-    src: '/assets/gallery/optimized/engagement-07.jpg',
-    fullSrc: '/assets/gallery/engagement-07.jpg',
+    src: assetUrl('assets/gallery/optimized/engagement-07.jpg'),
+    fullSrc: assetUrl('assets/gallery/engagement-07.jpg'),
     alt: 'Anish and Shalini with family members at their engagement',
     role: 'group-pair-a',
     frame: 'rect',
@@ -86,8 +88,8 @@ export const galleryItems = [
   },
   {
     id: 'engagement-08',
-    src: '/assets/gallery/optimized/engagement-08.jpg',
-    fullSrc: '/assets/gallery/engagement-08.jpg',
+    src: assetUrl('assets/gallery/optimized/engagement-08.jpg'),
+    fullSrc: assetUrl('assets/gallery/engagement-08.jpg'),
     alt: 'Anish and Shalini with friends and family at their engagement',
     role: 'group-pair-b',
     frame: 'rect',

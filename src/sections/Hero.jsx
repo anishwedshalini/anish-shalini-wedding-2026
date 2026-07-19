@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { wedding } from '../data'
 import Countdown from '../components/Countdown'
+import { assetUrl } from '../utils/assetUrl'
 import './Hero.css'
 
 export default function Hero() {
@@ -40,7 +41,7 @@ export default function Hero() {
           >
             <img
               className="hero__ganesha-image"
-              src="/assets/decorative/ganesha.png"
+              src={assetUrl('assets/decorative/ganesha.png')}
               alt="Lord Ganesha"
               width="681"
               height="1002"
@@ -76,7 +77,7 @@ export default function Hero() {
           <span className="hero__portrait-line" aria-hidden="true" />
           <img
             className="hero__portrait-image"
-            src="/assets/couple/hero-couple.jpg"
+            src={assetUrl('assets/couple/hero-couple.jpg')}
             alt="Dr. Anish Kumar and Dr. Shalini Priya seated together beneath a floral wedding arch"
             width="1024"
             height="1536"

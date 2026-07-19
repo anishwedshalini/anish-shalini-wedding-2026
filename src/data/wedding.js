@@ -1,3 +1,5 @@
+import { assetUrl } from '../utils/assetUrl'
+
 /**
  * Core wedding details — edit here for easy updates.
  */
@@ -34,7 +36,7 @@ export const wedding = {
     /** Replace with a precise pin URL when ready */
     mapUrl:
       'https://www.google.com/maps/search/?api=1&query=Hotel+Vishuwa+Birgunj+Nepal',
-    photo: '/assets/venue/hotel-vishuwa.jpg',
+    photo: assetUrl('assets/venue/hotel-vishuwa.jpg'),
   },
   actions: {
     /** Optional RSVP link for the closing section (kept separate from venue attendance). */

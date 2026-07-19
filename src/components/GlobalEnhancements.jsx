@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { assetUrl } from '../utils/assetUrl'
 import './GlobalEnhancements.css'
 
-const MUSIC_SRC = '/assets/audio/wedding-music.mp3'
+const MUSIC_SRC = assetUrl('assets/audio/wedding-music.mp3')
 const PETALS = [
   { left: '8%', delay: '-4s', duration: '21s', mid: '24px', end: '-12px', size: '16px', tone: 'rose', shape: 'rose', turn: '210deg' },
   { left: '21%', delay: '-16s', duration: '27s', mid: '-18px', end: '16px', size: '13px', tone: 'marigold', shape: 'marigold', turn: '-170deg' },

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Reveal from '../components/Reveal'
 import { LotusMotif } from '../components/Motifs'
 import { events } from '../data'
+import { assetUrl } from '../utils/assetUrl'
 import './Timeline.css'
 
 const eventPresentation = {
@@ -9,33 +10,33 @@ const eventPresentation = {
     number: '01',
     description:
       'A sacred beginning with prayer, tradition and the blessings of family.',
-    artwork: '/assets/events/katha-matkor.png',
+    artwork: assetUrl('assets/events/katha-matkor.png'),
     artworkName: 'Kalash',
   },
   sangeet: {
     number: '02',
     description: 'An evening of music, laughter and celebration.',
-    artwork: '/assets/events/sangeet.png',
+    artwork: assetUrl('assets/events/sangeet.png'),
     artworkName: 'Musical motif',
   },
   haldi: {
     number: '03',
     description:
       'A joyful ceremony filled with turmeric, laughter and blessings.',
-    artwork: '/assets/events/haldi.png',
+    artwork: assetUrl('assets/events/haldi.png'),
     artworkName: 'Floral turmeric motif',
   },
   'shubh-vivaah': {
     number: '04',
     description: 'Beside the sacred Agni, two lives become one.',
-    artwork: '/assets/events/shubh-vivaah.png',
+    artwork: assetUrl('assets/events/shubh-vivaah.png'),
     artworkName: 'Sacred Agni or mandap motif',
   },
   vidai: {
     number: '05',
     description:
       'A tender farewell and the beginning of a new journey.',
-    artwork: '/assets/events/vidai.png',
+    artwork: assetUrl('assets/events/vidai.png'),
     artworkName: 'Doli motif',
   },
 }
